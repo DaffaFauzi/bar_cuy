@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Nankatsu Barbershop</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <style>
+        /* Styling Umum */
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #333;
+            background: linear-gradient(#c2730c, #ad0d0d);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-image: linear-gradient(135deg, rgba(255,87,34,0.8), rgba(33,150,243,0.8)), url('images/awalan.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255,87,34,0.8), rgba(33,150,243,0.8));
+            color: #fff;
+        }
+
+        .contact-container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+            display: flex;
+            padding: 40px;
+            max-width: 900px;
+            gap: 20px;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        /* Form Styling */
+        .form-container {
+            width: 55%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            background: #fff;
+            color: #333;
+        }
+
+        .form-control:focus {
+            border-color: #2196F3;
+            box-shadow: 0px 0px 5px rgba(33, 150, 243, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #2196F3;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .btn-primary:hover {
+            background-color: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 16px rgba(33, 150, 243, 0.2);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            width: 40%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info h3 {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-info ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .contact-info li {
+            font-size: 1rem;
+            color: #fcfafa;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info li span {
+            font-size: 1.3rem;
+            margin-right: 10px;
+            color: #ff5722;
+        }
+
+        /* Kembali ke Beranda Button */
+        .btn-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background-color: rgba(33,150,243,0.8);
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #e64a19;
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 16px rgba(255, 87, 34, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Tombol Kembali ke Beranda -->
+    <button class="btn-back" onclick="goToHomepage()">Kembali</button>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="mb-3">Layanan Booking</h1>
+            <p>Di Nankatsu Barbershop, kami ingin setiap pengalaman Anda bersama kami berjalan lancar. Jangan ragu untuk menghubungi kami untuk booking.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingDate">Tanggal Booking:</label>
+                        <input type="date" id="bookingDate" name="bookingDate" class="form-control" required onchange="updateBookingDay()">
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingDay">Hari Booking:</label>
+                        <select id="bookingDay" name="bookingDay" class="form-control" required>
+                            <option value="1">Senin</option>
+                            <option value="2">Selasa</option>
+                            <option value="3">Rabu</option>
+                            <option value="4">Kamis</option>
+                            <option value="5">Jumat</option>
+                            <option value="6">Sabtu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingTime">Jam Booking:</label>
+                        <input type="time" id="bookingTime" name="bookingTime" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan:</label>
+                        <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Kirim Pesan</button>
+                </form>
+            </div>
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Informasi Kontak</h3>
+                <ul>
+                    <li>
+                        <span class="icon icon-map-marker"></span>
+                        <div>
+                            <strong>Alamat:</strong><br> Purwakarta, Maniis
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon icon-phone"></span>
+                        <div>
+                            <strong>Jam Buka:</strong><br> Sen-Jum: 10.00 - 21.00 <br> Sabtu: 10.00 - 22.00 <br> Minggu: Tutup
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon icon-clock"></span>
+                        <div>
+                            <strong>Jam Booking:</strong><br> 
+                            Sen-Jum: 11.00 - 20.00<br>
+                            Sabtu: 11.00 - 21.00<br>
+                            Minggu: Tutup
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function isWithinBookingHours(bookingHour, bookingDay) {
+            const bookingStartHours = { 1: 11, 2: 11, 3: 11, 4: 11, 5: 11, 6: 11 };
+            const bookingEndHours = { 1: 20, 2: 20, 3: 20, 4: 20, 5: 20, 6: 21 };
+
+            if (bookingDay === 0) {
+                return false;
+            }
+
+            return bookingHour >= bookingStartHours[bookingDay] && bookingHour < bookingEndHours[bookingDay];
+        }
+
+        function updateBookingDay() {
+            const bookingDate = new Date(document.getElementById('bookingDate').value);
+            const bookingDay = bookingDate.getDay();
+
+            const daysOfWeek = {
+                0: "Minggu",
+                1: "Senin",
+                2: "Selasa",
+                3: "Rabu",
+                4: "Kamis",
+                5: "Jumat",
+                6: "Sabtu"
+            };
+            
+            document.getElementById('bookingDay').value = bookingDay;
+        }
+
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const bookingDate = document.getElementById('bookingDate').value;
+            const bookingDay = parseInt(document.getElementById('bookingDay').value);
+            const bookingTime = document.getElementById('bookingTime').value;
+            const message = document.getElementById('message').value;
+            
+            const bookingHour = parseInt(bookingTime.split(':')[0]);
+            const bookingMinute = bookingTime.split(':')[1];
+            
+            const daysOfWeek = {
+                1: "Senin",
+                2: "Selasa",
+                3: "Rabu",
+                4: "Kamis",
+                5: "Jumat",
+                6: "Sabtu"
+            };
+            const bookingDayName = daysOfWeek[bookingDay];
+
+            if (isWithinBookingHours(bookingHour, bookingDay)) {
+                const waMessage = `Halo, saya ${name}. Saya ingin booking pada hari ${bookingDayName} (${bookingDate}) pukul ${bookingHour}:${bookingMinute}. Berikut pesan saya:\n\n${message}`;
+                const encodedMessage = encodeURIComponent(waMessage);
+                const whatsappLink = `https://wa.me/+6283816164817?text=${encodedMessage}`;
+                
+                window.open(whatsappLink, '_blank');
+            } else {
+                alert('Jam booking tidak sesuai dengan jadwal pada hari tersebut!');
+            }
+        }
+
+        function goToHomepage() {
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>
